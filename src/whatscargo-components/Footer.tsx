@@ -57,13 +57,13 @@ const Footer = () => {
             <h4 className="font-bold text-foreground mb-4">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                <a href="/whatscargo/privacy" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                   <Shield className="w-4 h-4" />
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                <a href="/whatscargo/terms" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Terms of Service
                 </a>

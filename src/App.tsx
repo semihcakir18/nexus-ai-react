@@ -10,6 +10,8 @@ import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
 import { Terms } from './pages/Terms';
+import { WhatsCargoPrivacy } from './pages/WhatsCargoPrivacy';
+import { WhatsCargoTerms } from './pages/WhatsCargoTerms';
 import { NotFound } from './pages/NotFound';
 import { WhatsCargo } from './pages/WhatsCargo';
 import './App.css';
@@ -28,7 +30,7 @@ function ScrollToTop() {
 
 function AppContent() {
   const location = useLocation();
-  const isWhatsCargoPage = location.pathname === '/whatscargo';
+  const isWhatsCargoPage = location.pathname.startsWith('/whatscargo');
 
   return (
     <div id="app">
@@ -42,6 +44,8 @@ function AppContent() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/whatscargo" element={<WhatsCargo />} />
+          <Route path="/whatscargo/privacy" element={<WhatsCargoPrivacy />} />
+          <Route path="/whatscargo/terms" element={<WhatsCargoTerms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
