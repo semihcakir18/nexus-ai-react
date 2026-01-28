@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Download, Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "./whatscargo_logo.jpeg";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,12 +11,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-primary flex items-center justify-center border-2 border-border">
-              <MessageCircle className="w-5 h-5 text-primary-foreground" />
-            </div>
+          <a href="/whatscargo" className="flex items-center gap-3">
+            <img src={logo} alt="WhatsCargo" className="w-9 h-9 object-contain rounded-md" />
             <span className="text-xl font-bold text-foreground">WhatsCargo</span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">

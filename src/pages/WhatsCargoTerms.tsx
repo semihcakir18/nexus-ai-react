@@ -88,7 +88,7 @@ export function WhatsCargoTerms() {
           {/* Navigation & Controls */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <Link to="/whatscargo">
-              <Button variant="ghost" className="gap-2 pl-0 hover:pl-2 transition-all">
+              <Button variant="ghost" className="gap-2 pl-0 hover:pl-2 transition-all text-green-600 hover:text-green-700 hover:bg-green-50">
                 <ArrowLeft className="h-4 w-4" />
                 {language === "en" ? "Back to Home" : "Ana Sayfaya Dön"}
               </Button>
