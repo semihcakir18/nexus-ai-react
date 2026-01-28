@@ -1,10 +1,10 @@
 /* ========== CSS Variables ========== */
 :root {
   /* Color Palette */
-  --color-dark-blue: #233d4d;
-  --color-mid-blue: #215e61;
-  --color-light-blue: #fe7f2d;
-  --color-cream: #f5fbe6;
+  --color-dark-blue: #061E29;
+  --color-mid-blue: #1D546D;
+  --color-light-blue: #5F9598;
+  --color-cream: #F3F4F4;
 
   /* Typography */
   --font-primary:
@@ -423,7 +423,7 @@ p {
 .stat-card {
   background: rgba(33, 94, 97, 0.2);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(254, 127, 45, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.2);
   border-radius: 20px;
   padding: var(--spacing-lg) var(--spacing-md);
   text-align: center;
@@ -447,7 +447,7 @@ p {
 .stat-card:hover {
   transform: translateY(-8px);
   border-color: var(--color-light-blue);
-  box-shadow: 0 12px 40px rgba(254, 127, 45, 0.25);
+  box-shadow: 0 12px 40px rgba(255, 255, 255, 0.25);
 }
 
 .stat-card:hover::before {
@@ -468,17 +468,17 @@ p {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  background: rgba(254, 127, 45, 0.15);
-  border: 2px solid rgba(254, 127, 45, 0.3);
+  background: rgba(255, 255, 255, 0.899);
+  border: 2px solid rgba(253, 253, 253, 0.3);
 }
 
 .stat-icon.warning {
-  background: rgba(254, 127, 45, 0.1);
+  background: rgba(15, 159, 216, 0.538);
   border-color: rgba(254, 127, 45, 0.25);
 }
 
 .stat-icon.danger {
-  background: rgba(254, 127, 45, 0.2);
+  background: rgba(15, 159, 216, 0.538);
   border-color: var(--color-light-blue);
 }
 
