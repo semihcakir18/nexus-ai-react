@@ -102,35 +102,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="team-section">
-        <div className="container">
-          <div className="team-header">
-            <h2 className="section-heading">Leadership Team</h2>
-            <p className="section-subheading">The founders driving the next generation of Nexus AI technology</p>
-          </div>
 
-          <div className="team-grid">
-            <div className="team-card">
-              <div className="team-avatar">
-                <span className="avatar-initials">FA</span>
-              </div>
-              <h4 className="team-name">Fahad Abalkhail</h4>
-              <p className="team-role">Co-Founder & CGO</p>
-              <p className="team-experience">20+ years Sales & Marketing</p>
-            </div>
-
-            <div className="team-card">
-              <div className="team-avatar">
-                <span className="avatar-initials">VB</span>
-              </div>
-              <h4 className="team-name">Veysel Baydogan</h4>
-              <p className="team-role">Co-Founder & CPO</p>
-              <p className="team-experience">25+ years Tech, IoT/AI</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

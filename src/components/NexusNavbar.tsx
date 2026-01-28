@@ -27,6 +27,7 @@ export function Navbar() {
           <li><NavLink to="/" className="navbar-link" onClick={closeMenu}>Home</NavLink></li>
           <li><NavLink to="/projects" className="navbar-link" onClick={closeMenu}>Products</NavLink></li>
           <li><NavLink to="/about" className="navbar-link" onClick={closeMenu}>About</NavLink></li>
+          <li><NavLink to="/leadership" className="navbar-link" onClick={closeMenu}>Leaders</NavLink></li>
           <li><NavLink to="/contact" className="navbar-link" onClick={closeMenu}>Contact</NavLink></li>
         </ul>
 

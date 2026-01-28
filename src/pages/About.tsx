@@ -85,26 +85,7 @@ export function About() {
           </div>
         </div>
 
-        <div className="section">
-          <h2 className="section-title">Leadership Team</h2>
-          <div className="section-content">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-lg)', marginTop: 'var(--spacing-md)' }}>
-              <div style={{ textAlign: 'center', padding: 'var(--spacing-md)', background: 'rgba(98, 159, 173, 0.05)', borderRadius: '16px', border: '1px solid rgba(98, 159, 173, 0.2)' }}>
-                <div style={{ width: '100px', height: '100px', background: 'rgba(98, 159, 173, 0.2)', border: '2px solid rgba(98, 159, 173, 0.4)', borderRadius: '50%', margin: '0 auto var(--spacing-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', fontWeight: 700, color: 'var(--color-light-blue)' }}>FA</div>
-                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-cream)', marginBottom: '0.5rem' }}>Fahad Abalkhail</h4>
-                <p style={{ color: 'var(--color-light-blue)', marginBottom: '0.5rem', fontWeight: 600 }}>Co-Founder & CGO</p>
-                <p style={{ opacity: 0.8, fontSize: '0.875rem' }}>20+ years in Sales & Marketing</p>
-              </div>
 
-              <div style={{ textAlign: 'center', padding: 'var(--spacing-md)', background: 'rgba(98, 159, 173, 0.05)', borderRadius: '16px', border: '1px solid rgba(98, 159, 173, 0.2)' }}>
-                <div style={{ width: '100px', height: '100px', background: 'rgba(98, 159, 173, 0.2)', border: '2px solid rgba(98, 159, 173, 0.4)', borderRadius: '50%', margin: '0 auto var(--spacing-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', fontWeight: 700, color: 'var(--color-light-blue)' }}>VB</div>
-                <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-cream)', marginBottom: '0.5rem' }}>Veysel Baydogan</h4>
-                <p style={{ color: 'var(--color-light-blue)', marginBottom: '0.5rem', fontWeight: 600 }}>Co-Founder & CPO</p>
-                <p style={{ opacity: 0.8, fontSize: '0.875rem' }}>25+ years in Tech, IoT/AI</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div className="section">
           <h2 className="section-title">Our Values</h2>

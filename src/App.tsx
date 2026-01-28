@@ -6,6 +6,7 @@ import { Navbar } from './components/NexusNavbar';
 import { Footer } from './components/NexusFooter';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
+import { Leadership } from './pages/Leadership';
 import { Projects } from './pages/Projects';
 import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
@@ -40,6 +41,7 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
+          <Route path="/leadership" element={<Leadership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
