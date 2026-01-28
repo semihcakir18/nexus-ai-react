@@ -22,7 +22,7 @@ const plans = [
   {
     name: "Premium",
     description: "Full power for serious businesses",
-    price: "9.99",
+    price: "2.50",
     icon: Crown,
     featured: true,
     features: [

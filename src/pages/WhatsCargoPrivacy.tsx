@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { legalContent, type LegalSection } from "@/data/legal-content";
 import { Globe, ArrowLeft } from "lucide-react";
-import WhatsCargoFooter from "@/whatscargo-components/Footer";
+import Header from "@/whatscargo-components/Header";
+import Footer from "@/whatscargo-components/Footer";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export function WhatsCargoPrivacy() {
@@ -13,15 +15,15 @@ export function WhatsCargoPrivacy() {
       switch (item.type) {
         case "paragraph":
           return (
-            <p key={index} style={{ marginBottom: "var(--spacing-sm)" }}>
+            <p key={index} className="mb-4 text-muted-foreground leading-relaxed">
               {item.text}
             </p>
           );
         case "list":
           return (
-            <ul key={index} style={{ listStyle: "disc", paddingLeft: "2rem", marginBottom: "var(--spacing-sm)" }}>
+            <ul key={index} className="list-disc pl-6 mb-4 space-y-2 text-muted-foreground">
               {item.items.map((li, i) => (
-                <li key={i} style={{ marginBottom: "0.5rem" }}>
+                <li key={i}>
                   {li}
                 </li>
               ))}
@@ -30,46 +32,37 @@ export function WhatsCargoPrivacy() {
         case "warning":
         case "danger":
         case "highlight":
-          const colors = {
-            warning: { bg: "#fff3e0", border: "#ff9800" },
-            danger: { bg: "#ffebee", border: "#f44336" },
-            highlight: { bg: "#e3f2fd", border: "#1976d2" },
+          const styles = {
+            warning: "bg-orange-50 border-orange-500 text-orange-900",
+            danger: "bg-red-50 border-red-500 text-red-900",
+            highlight: "bg-blue-50 border-blue-500 text-blue-900",
           };
-          const style = colors[item.type];
           return (
             <div
               key={index}
-              style={{
-                background: style.bg,
-                padding: "12px",
-                borderLeft: `3px solid ${style.border}`,
-                margin: "12px 0",
-                borderRadius: "4px",
-                marginBottom: "var(--spacing-sm)",
-                color: "#1f2937", // Fixed text contrast
-              }}
+              className={`p-4 border-l-4 rounded mb-4 text-sm font-medium ${styles[item.type]}`}
             >
               {item.text}
             </div>
           );
         case "sub-section":
           return (
-            <div key={index} style={{ marginTop: "16px", marginBottom: "8px" }}>
-              <h3 style={{ fontSize: "1.1em", fontWeight: "600", marginBottom: "8px", color: "var(--color-primary)" }}>
+            <div key={index} className="mt-6 mb-3">
+              <h3 className="text-lg font-semibold mb-3 text-foreground">
                 {item.title}
               </h3>
               {item.content.map((subItem, subIndex) => {
                 if (typeof subItem === "string") {
                   return (
-                    <p key={subIndex} style={{ marginBottom: "var(--spacing-sm)" }}>
+                    <p key={subIndex} className="mb-4 text-muted-foreground leading-relaxed">
                       {subItem}
                     </p>
                   );
                 } else if (subItem.type === "list") {
                   return (
-                    <ul key={subIndex} style={{ listStyle: "disc", paddingLeft: "2rem", marginBottom: "var(--spacing-sm)" }}>
+                    <ul key={subIndex} className="list-disc pl-6 mb-4 space-y-2 text-muted-foreground">
                       {subItem.items.map((li, i) => (
-                        <li key={i} style={{ marginBottom: "0.5rem" }}>
+                        <li key={i}>
                           {li}
                         </li>
                       ))}
@@ -87,83 +80,84 @@ export function WhatsCargoPrivacy() {
   };
 
   return (
-    <>
-      <div className="content" style={{ marginTop: "4rem" }}>
-        <div className="content-container">
-          <div className="mb-8">
-            <Link to="/whatscargo" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-              {language === "en" ? "Back to Home" : "Ana Sayfaya Dön"}
+    <div className="min-h-screen bg-background font-sans">
+      <Header />
+      
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Navigation & Controls */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+            <Link to="/whatscargo">
+              <Button variant="ghost" className="gap-2 pl-0 hover:pl-2 transition-all">
+                <ArrowLeft className="h-4 w-4" />
+                {language === "en" ? "Back to Home" : "Ana Sayfaya Dön"}
+              </Button>
             </Link>
-          </div>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--spacing-md)" }}>
-            <h1 className="page-title" style={{ marginBottom: 0 }}>
-              {content.title}
-            </h1>
-            <div style={{ display: "flex", gap: "8px", alignItems: "center", background: "rgba(0,0,0,0.05)", padding: "4px", borderRadius: "8px" }}>
-              <Globe className="h-4 w-4" style={{ margin: "0 4px" }} />
+            <div className="flex items-center gap-1 bg-muted p-1 rounded-lg self-start sm:self-auto">
+              <Globe className="h-4 w-4 mx-2 text-muted-foreground" />
               <button
                 onClick={() => setLanguage("en")}
-                style={{
-                  padding: "4px 12px",
-                  borderRadius: "6px",
-                  border: "none",
-                  background: language === "en" ? "var(--color-primary, #000)" : "transparent",
-                  color: language === "en" ? "#fff" : "inherit",
-                  cursor: "pointer",
-                  fontWeight: language === "en" ? "600" : "normal",
-                  transition: "all 0.2s",
-                }}
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  language === "en" 
+                    ? "bg-background text-foreground shadow-sm" 
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 English
               </button>
               <button
                 onClick={() => setLanguage("tr")}
-                style={{
-                  padding: "4px 12px",
-                  borderRadius: "6px",
-                  border: "none",
-                  background: language === "tr" ? "var(--color-primary, #000)" : "transparent",
-                  color: language === "tr" ? "#fff" : "inherit",
-                  cursor: "pointer",
-                  fontWeight: language === "tr" ? "600" : "normal",
-                  transition: "all 0.2s",
-                }}
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                  language === "tr" 
+                    ? "bg-background text-foreground shadow-sm" 
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 Türkçe
               </button>
             </div>
           </div>
 
-          <p style={{ opacity: 0.7, marginBottom: "var(--spacing-lg)", fontSize: "0.95rem" }}>
-            {language === "en" ? "Last updated: " : "Son Güncelleme: "}
-            {content.lastUpdated}
-          </p>
+          {/* Header Section */}
+          <div className="mb-10 pb-8 border-b border-border">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight text-foreground">
+              {content.title}
+            </h1>
+            <p className="text-muted-foreground">
+              {language === "en" ? "Last updated: " : "Son Güncelleme: "}
+              {content.lastUpdated}
+            </p>
+          </div>
 
           {/* Intro */}
           {content.intro && content.intro.length > 0 && (
-            <div className="section">
-              <div className="section-content">
-                {content.intro.map((text, i) => (
-                  <p key={i} style={{ marginBottom: "var(--spacing-sm)" }}>
-                    {text}
-                  </p>
-                ))}
-              </div>
+            <div className="mb-8">
+              {content.intro.map((text, i) => (
+                <p key={i} className="mb-4 text-lg text-muted-foreground leading-relaxed">
+                  {text}
+                </p>
+              ))}
             </div>
           )}
 
           {/* Sections */}
-          {content.sections.map((section, idx) => (
-            <div key={idx} className="section">
-              {section.title && <h2 className="section-title">{section.title}</h2>}
-              <div className="section-content">{renderSectionContent(section.content)}</div>
-            </div>
-          ))}
+          <div className="space-y-10">
+            {content.sections.map((section, idx) => (
+              <section key={idx}>
+                {section.title && (
+                  <h2 className="text-2xl font-bold mb-4 text-foreground tracking-tight">
+                    {section.title}
+                  </h2>
+                )}
+                {renderSectionContent(section.content)}
+              </section>
+            ))}
+          </div>
         </div>
-      </div>
-      <WhatsCargoFooter />
-    </>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
